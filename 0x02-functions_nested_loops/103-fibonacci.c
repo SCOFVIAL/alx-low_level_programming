@@ -9,7 +9,7 @@
 int main(void)
 {
 int a = 1, b = 2, next;
-int sum = 2;  // Start with 2 because it's the first even term
+int sum = 2;  /* Start with 2 because it's the first even term */
 
 while (1)
 {
