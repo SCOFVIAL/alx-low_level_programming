@@ -8,8 +8,8 @@
  */
 int main(void)
 {
-long int a = 1, b = 2, next;
-long int sum = 2;  // Start with 2 because it's the first even term
+int a = 1, b = 2, next;
+int sum = 2;  // Start with 2 because it's the first even term
 
 while (1)
 {
@@ -24,6 +24,6 @@ a = b;
 b = next;
 }
 
-printf("%ld\n", sum);
+printf("%d\n", sum);
 return (0);
 }
