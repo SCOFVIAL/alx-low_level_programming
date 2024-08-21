@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
- * positive_or_negative - prints if a number is positive, negative, or zero
+ * positive_or_negative - prints if a number
+ * is positive, negative, or zero
  * @i: the integer to be checked
  */
 void positive_or_negative(int i)
