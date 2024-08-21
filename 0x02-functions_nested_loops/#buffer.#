@@ -1,0 +1,157 @@
+
+### Step-by-Step Plan
+
+1. **Create `main.h`**: This header file will declare the `_putchar` function and the `print_alphabet_x10` function.
+2. **Create `2-print_alphabet_x10.c`**: This file will contain the `print_alphabet_x10` function.
+3. **Ensure `_putchar.c`**: This file will implement the `_putchar` function using the `write` system call.
+
+### main.h
+```c
+#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
+void print_alphabet_x10(void);
+
+#endif /* MAIN_H */
+```
+
+### 2-print_alphabet_x10.c
+```c
+#include "main.h"
+
+/**
+ * print_alphabet_x10 - prints the alphabet in lowercase 10 times,
+  * each followed by a new line
+   */
+   void print_alphabet_x10(void)
+   {
+       char alphabet[27] = "abcdefghijklmnopqrstuvwxyz\n";
+           int i, j;
+
+    for (i = 0; i < 10; i++)
+        {
+	        for (j = 0; j < 27; j++)
+		        {
+			            _putchar(alphabet[j]);
+				            }
+					        }
+						}
+						```
+
+### _putchar.c
+```c
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+  * @c: The character to print
+   *
+    * Return: On success 1.
+     * On error, -1 is returned, and errno is set appropriately.
+      */
+      int _putchar(char c)
+      {
+          return (write(1, &c, 1));
+	  }
+	  ```
+
+### Compilation and Execution
+
+1. **Save the Code**: Ensure the above C code is saved into the respective files: `main.h`, `2-print_alphabet_x10.c`, and `_putchar.c`.
+
+2. **Create `2-main.c`**: Save the following code into a file named `2-main.c` to test the `print_alphabet_x10` function.
+   ```c
+      #include "main.h"
+
+   /**
+       * main - check the code.
+           *
+	       * Return: Always 0.
+	           */
+		      int main(void)
+		         {
+			        print_alphabet_x10();
+				       return (0);
+				          }
+					     ```
+
+3. **Compile the Program**: Use the `gcc` compiler to compile the program. Run the following command in your terminal:
+   ```sh
+      gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet_x10
+         ```
+
+4. **Run the Executable**: Execute the compiled program:
+   ```sh
+      ./2-alphabet_x10
+         ```
+
+### Example Commands
+```sh
+# Save the C code to main.h
+echo '#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
+void print_alphabet_x10(void);
+
+#endif /* MAIN_H */' > main.h
+
+# Save the C code to 2-print_alphabet_x10.c
+echo '#include "main.h"
+
+/**
+ * print_alphabet_x10 - prints the alphabet in lowercase 10 times,
+  * each followed by a new line
+   */
+   void print_alphabet_x10(void)
+   {
+       char alphabet[27] = "abcdefghijklmnopqrstuvwxyz\n";
+           int i, j;
+
+    for (i = 0; i < 10; i++)
+        {
+	        for (j = 0; j < 27; j++)
+		        {
+			            _putchar(alphabet[j]);
+				            }
+					        }
+						}' > 2-print_alphabet_x10.c
+
+# Save the C code to _putchar.c
+echo '#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+  * @c: The character to print
+   *
+    * Return: On success 1.
+     * On error, -1 is returned, and errno is set appropriately.
+      */
+      int _putchar(char c)
+      {
+          return (write(1, &c, 1));
+	  }' > _putchar.c
+
+# Save the C code to 2-main.c
+echo '#include "main.h"
+
+/**
+ * main - check the code.
+  *
+   * Return: Always 0.
+    */
+    int main(void)
+    {
+        print_alphabet_x10();
+	    return (0);
+	    }' > 2-main.c
+
+# Compile the program
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet_x10
+
+# Run the executable
+./2-alphabet_x10
+```
+
+This should produce the desired output of the alphabet in lowercase printed 10 times, each followed by a new line.
